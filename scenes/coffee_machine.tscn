@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3svuakptdw35"]
+
+[ext_resource type="Script" path="res://scripts/coffee_machine.gd" id="1_0filk"]
+[ext_resource type="Texture2D" uid="uid://cnnrxdnhawmkd" path="res://assets/FREE Pixel Art Bar and Cafe Items Pack/Coffe Pot Machine 3.png" id="1_a7wx6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x8jo1"]
+radius = 12.0
+height = 32.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ih51"]
+atlas = ExtResource("1_a7wx6")
+region = Rect2(0, 0, 19, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t65x6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ih51")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CoffeeMachine" type="Area2D"]
+script = ExtResource("1_0filk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_x8jo1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_t65x6")
+autoplay = "default"
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
