@@ -1,5 +1,6 @@
 extends Control
 @onready var nine_patch_rect: NinePatchRect = $NinePatchRect
+@onready var recipes: NinePatchRect = $Recipes
 
 var coffee : int
 var milk : int
@@ -26,7 +27,7 @@ func _on_sugar_button_down() -> void:
 
 
 func _on_button_button_down() -> void:
-	nine_patch_rect.visible = false
+	visible = false
 	if prepared_order in Global.current_orders:
 		print("Order found")
 		Global.daily_revenue+=Global.menu["drinks"][prepared_order]["price"]
@@ -43,3 +44,6 @@ func _on_button_button_down() -> void:
 		Global.orders_served+=1
 		Global.avg_satisfaction = (Global.avg_satisfaction+satisfaction)/Global.orders_served
 		Global.update_revenue(Global.menu["drinks"][prepared_order]["price"])
+		for key in Global.customer_orders:
+			if Global.customer_orders[key] == prepared_order and get_tree().current_scene.find_child(key):
+				get_tree().current_scene.find_child(key).leave()

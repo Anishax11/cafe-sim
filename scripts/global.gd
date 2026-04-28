@@ -1,12 +1,16 @@
 extends Node
 
-var day : int = 2
+var day : int = 0
 var revenue = 0
 var orders_served : int = 0
 var avg_satisfaction : int = 0
 var daily_revenue = 0
-var current_orders =["Espresso"]
-
+var current_orders =[]
+var customer_orders ={ 
+	
+}#customer_id : order
+var customers = 0
+var items = ["Espresso","Latte","Hot Chocolate","Frappe"]
 var menu = {
 	"drinks" ={
 		"Espresso" = {

@@ -8,3 +8,4 @@ func _on_button_button_down() -> void:
 	Global.orders_served = 0
 	Global.avg_satisfaction = 0
 	Global.day+=1
+	Global.update_revenue(0)
