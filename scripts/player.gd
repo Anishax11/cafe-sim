@@ -9,7 +9,7 @@ var pause_menu
 var speed=70
 var direction: Vector2
 var points
-var time_manager
+var drink_menu
 var click_blocker
 var task_manager
 
@@ -19,7 +19,8 @@ func _ready() -> void:
 	cam.limit_top = -370
 	cam.limit_left = -320
 	cam.limit_right = 475
-	inventory = get_node("InventoryPanel")
+	inventory = get_node("Inventory")
+	drink_menu= get_node("DrinkMenu")
 
 func _physics_process(delta: float) -> void:
 
@@ -82,13 +83,11 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("Left"):
 		direction.x-=1
 	if Input.is_action_just_pressed("Inventory"):
-		print("Open INV ")
-		if inventory==null:
-			print("Inv NUll")
+		drink_menu.visible = false
 		inventory.visible = not inventory.visible
-		#print("inventory.visible: ",inventory.visible)
-		#inventory.set_process_input(not inventory.visible)
-	#Fmenu.visible
+	if Input.is_action_just_pressed("DrinkMenu"):
+		inventory.visible = false
+		drink_menu.visible = not drink_menu.visible
 	
 	if Input.is_action_just_pressed("Tasks"):
 		task_manager.visible=!task_manager.visible
@@ -99,8 +98,3 @@ func _input(event: InputEvent) -> void:
 func _on_animated_sprite_2d_animation_finished() -> void:
 	
 	animated_sprite_2d.play(animated_sprite_2d.animation+"_idle")
-
-
-func _on_button_button_down() -> void:
-	print("Saving")
-	SaveLoad.save_for_python()

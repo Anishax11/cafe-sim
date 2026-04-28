@@ -1,0 +1,168 @@
+[gd_scene load_steps=4 format=3 uid="uid://ee44re55a7wl"]
+
+[ext_resource type="Script" path="res://scripts/drink_prep_screen.gd" id="1_xyco8"]
+[ext_resource type="Script" path="res://scripts/recipes.gd" id="2_2vwis"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_06qa3"]
+load_path = "res://.godot/imported/Glass 4.png-73f3cac9c15df5182f902f7fb7c1b44d.ctex"
+
+[node name="DrinkPrepScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1026.0
+offset_bottom = -573.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+mouse_filter = 1
+script = ExtResource("1_xyco8")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 124.0
+offset_bottom = 76.0
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_right = 124.0
+offset_bottom = 73.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="coffee" type="Button" parent="NinePatchRect/GridContainer"]
+layout_mode = 2
+text = "Coffee"
+
+[node name="milk" type="Button" parent="NinePatchRect/GridContainer"]
+layout_mode = 2
+text = "Milk"
+
+[node name="cream" type="Button" parent="NinePatchRect/GridContainer"]
+layout_mode = 2
+text = "Vanilla"
+
+[node name="sugar" type="Button" parent="NinePatchRect/GridContainer"]
+layout_mode = 2
+text = "Sugar"
+
+[node name="Recipes" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 2.0
+offset_right = 188.0
+offset_bottom = 73.0
+texture = SubResource("CompressedTexture2D_06qa3")
+script = ExtResource("2_2vwis")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Recipes"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 54.0
+offset_bottom = 69.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Recipes/ScrollContainer"]
+layout_mode = 2
+
+[node name="Espresso" type="RichTextLabel" parent="Recipes/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 10)
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 7
+text = "Espresso
+Strong and bold — 2× coffee, no milk, no sugar, no cream."
+scroll_active = false
+
+[node name="Button" type="Button" parent="Recipes/ScrollContainer/VBoxContainer/Espresso"]
+z_index = 1
+layout_mode = 0
+offset_left = 43.0
+offset_right = 61.0
+offset_bottom = 31.0
+scale = Vector2(0.3, 0.3)
+text = "+"
+
+[node name="Latte" type="RichTextLabel" parent="Recipes/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 10)
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 7
+text = "Latte
+
+Smooth and creamy — 1× coffee, 2× milk, 1× sugar, no cream."
+scroll_active = false
+
+[node name="Button" type="Button" parent="Recipes/ScrollContainer/VBoxContainer/Latte"]
+z_index = 1
+layout_mode = 0
+offset_left = 43.0
+offset_right = 61.0
+offset_bottom = 31.0
+scale = Vector2(0.3, 0.3)
+text = "+"
+
+[node name="Frappe" type="RichTextLabel" parent="Recipes/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 10)
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 7
+text = "Frappe
+
+Chilled and sweet — 1× coffee, 1× milk, 2× sugar, 1× cream."
+scroll_active = false
+
+[node name="Button" type="Button" parent="Recipes/ScrollContainer/VBoxContainer/Frappe"]
+z_index = 1
+layout_mode = 0
+offset_left = 43.0
+offset_right = 61.0
+offset_bottom = 31.0
+scale = Vector2(0.3, 0.3)
+text = "+"
+
+[node name="Hot Chocolate" type="RichTextLabel" parent="Recipes/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 10)
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 7
+text = "Hot Chocolate
+
+Rich and cozy — 0× coffee, 2× milk, 2× sugar, 1× cream"
+scroll_active = false
+
+[node name="Button" type="Button" parent="Recipes/ScrollContainer/VBoxContainer/Hot Chocolate"]
+z_index = 1
+layout_mode = 0
+offset_left = 43.0
+offset_right = 61.0
+offset_bottom = 31.0
+scale = Vector2(0.3, 0.3)
+text = "+"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 110.4
+offset_top = 75.8
+offset_right = 197.4
+offset_bottom = 106.8
+scale = Vector2(0.9, 0.9)
+text = "Finish
+"
+
+[connection signal="button_down" from="NinePatchRect/GridContainer/coffee" to="." method="_on_coffee_button_down"]
+[connection signal="button_down" from="NinePatchRect/GridContainer/milk" to="." method="_on_milk_button_down"]
+[connection signal="button_down" from="NinePatchRect/GridContainer/cream" to="." method="_on_vanilla_button_down"]
+[connection signal="button_down" from="NinePatchRect/GridContainer/sugar" to="." method="_on_sugar_button_down"]
+[connection signal="button_down" from="Recipes/ScrollContainer/VBoxContainer/Espresso/Button" to="Recipes" method="_on_button_button_down"]
+[connection signal="button_down" from="Recipes/ScrollContainer/VBoxContainer/Latte/Button" to="Recipes" method="_on_button_button_down"]
+[connection signal="button_down" from="Recipes/ScrollContainer/VBoxContainer/Frappe/Button" to="Recipes" method="_on_button_button_down"]
+[connection signal="button_down" from="Recipes/ScrollContainer/VBoxContainer/Hot Chocolate/Button" to="Recipes" method="_on_button_button_down"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
