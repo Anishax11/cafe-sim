@@ -22,7 +22,7 @@ func _on_button_pressed(button : Button) -> void:
 		get_parent().prepared_order = button.get_parent().name
 		return
 	label.custom_minimum_size = Vector2(50, 70)
-	button.position=Vector2(0,55) # Button appears at bottom right of label
+	button.position=Vector2(30,60) # Button appears at bottom right of label
 	button.text = "Start"
 	
 	

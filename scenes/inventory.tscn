@@ -1,9 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cipep4dece3t"]
+[gd_scene format=3 uid="uid://6dd3f6875ejb"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_06qa3"]
-load_path = "res://.godot/imported/Glass 4.png-73f3cac9c15df5182f902f7fb7c1b44d.ctex"
 
-[node name="Inventory" type="Control"]
+[node name="Inventory" type="Control" unique_id=592007605]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -13,65 +12,65 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2118587486]
 layout_mode = 1
 offset_right = 1168.0
 offset_bottom = 660.0
 texture = SubResource("CompressedTexture2D_06qa3")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2147075359]
 layout_mode = 0
 offset_left = -4.0
 offset_right = 1157.0
 offset_bottom = 650.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1707440219]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1121291564]
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "vv"
 
-[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer"]
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1867099185]
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "vv"
 
-[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer"]
+[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=698757887]
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "vv"
 
-[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer"]
+[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=1400922615]
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "vv"
 
-[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer"]
+[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=444414311]
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "vv"
 
-[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer"]
+[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=2036923964]
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "vv"
 
-[node name="Button7" type="Button" parent="ScrollContainer/VBoxContainer"]
+[node name="Button7" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=144770959]
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "vv"
 
-[node name="Button8" type="Button" parent="ScrollContainer/VBoxContainer"]
+[node name="Button8" type="Button" parent="ScrollContainer/VBoxContainer" unique_id=264152942]
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50

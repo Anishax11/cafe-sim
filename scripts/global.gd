@@ -1,6 +1,6 @@
 extends Node
 
-var day : int = 0
+var day : int = 1 
 var revenue = 0
 var orders_served : int = 0
 var avg_satisfaction : int = 0
@@ -50,6 +50,16 @@ var menu = {
 	}
 }
 
+var espresso_ordered = 0
+var latte_ordered = 0
+var hot_chocolate_ordered = 0
+var frappe_ordered = 0
+var tot_satisfaction = 0
+
+
 func update_revenue(rev):
 	daily_revenue+=rev
 	get_tree().current_scene.find_child("RevenueLabel").text = "Revenue : " + str(daily_revenue)
+	if revenue>0:
+		var cafe = get_tree().current_scene
+		cafe.get_node("coins").play()

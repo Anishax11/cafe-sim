@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://ee44re55a7wl"]
+[gd_scene format=3 uid="uid://ee44re55a7wl"]
 
-[ext_resource type="Script" path="res://scripts/drink_prep_screen.gd" id="1_xyco8"]
-[ext_resource type="Script" path="res://scripts/recipes.gd" id="2_2vwis"]
+[ext_resource type="Script" uid="uid://g6nqeoqxwjhh" path="res://scripts/drink_prep_screen.gd" id="1_xyco8"]
+[ext_resource type="Script" uid="uid://c8vkchbvqqfcb" path="res://scripts/recipes.gd" id="2_2vwis"]
 [ext_resource type="Texture2D" uid="uid://dm7088x5hpnif" path="res://assets/PastelUIFree.png/PastelUIFree.png" id="2_kafkk"]
 [ext_resource type="Texture2D" uid="uid://sgmx7rogjm7p" path="res://assets/moo_1.png" id="3_0ogm8"]
 [ext_resource type="Texture2D" uid="uid://b4mvw16qg3xmt" path="res://assets/Gemini_Generated_Image_jfc7trjfc7trjfc7.png" id="3_q6i12"]
@@ -38,7 +38,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="DrinkPrepScreen" type="Control"]
+[node name="DrinkPrepScreen" type="Control" unique_id=1159312486]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,19 +51,19 @@ scale = Vector2(5, 5)
 mouse_filter = 1
 script = ExtResource("1_xyco8")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1288095337]
 layout_mode = 0
 offset_left = -3.0
 offset_right = 121.0
 offset_bottom = 129.0
 scale = Vector2(2, 2)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NinePatchRect"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NinePatchRect" unique_id=892063589]
 position = Vector2(66, 60.95)
 scale = Vector2(2.08421, 1.54516)
 sprite_frames = SubResource("SpriteFrames_h2iht")
 
-[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect" unique_id=1003273470]
 layout_mode = 0
 offset_left = 13.0
 offset_top = 23.0
@@ -74,12 +74,12 @@ theme_override_constants/h_separation = 47
 theme_override_constants/v_separation = 26
 columns = 2
 
-[node name="coffee" type="Button" parent="NinePatchRect/GridContainer"]
+[node name="coffee" type="Button" parent="NinePatchRect/GridContainer" unique_id=959582968]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "coffee"
 
-[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/coffee"]
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/coffee" unique_id=986015107]
 layout_mode = 0
 offset_left = 10.375
 offset_top = 23.8
@@ -88,12 +88,12 @@ offset_bottom = 597.8
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("3_q6i12")
 
-[node name="milk" type="Button" parent="NinePatchRect/GridContainer"]
+[node name="milk" type="Button" parent="NinePatchRect/GridContainer" unique_id=2013568603]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "milk"
 
-[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/milk"]
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/milk" unique_id=383458678]
 layout_mode = 0
 offset_left = 7.875
 offset_top = 22.8
@@ -102,13 +102,13 @@ offset_bottom = 254.8
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_0ogm8")
 
-[node name="cream" type="Button" parent="NinePatchRect/GridContainer"]
+[node name="cream" type="Button" parent="NinePatchRect/GridContainer" unique_id=3603818]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "cream
 "
 
-[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/cream"]
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/cream" unique_id=1124443783]
 layout_mode = 0
 offset_left = 11.0
 offset_top = 22.7
@@ -117,12 +117,12 @@ offset_bottom = 578.7
 scale = Vector2(0.05, 0.041)
 texture = ExtResource("5_fnjxq")
 
-[node name="sugar" type="Button" parent="NinePatchRect/GridContainer"]
+[node name="sugar" type="Button" parent="NinePatchRect/GridContainer" unique_id=1081564034]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "sugar"
 
-[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/sugar"]
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/GridContainer/sugar" unique_id=1875510565]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 23.9
@@ -131,7 +131,7 @@ offset_bottom = 479.9
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("6_i2dke")
 
-[node name="Recipes" type="NinePatchRect" parent="."]
+[node name="Recipes" type="NinePatchRect" parent="." unique_id=573760837]
 layout_mode = 0
 offset_left = 262.0
 offset_top = 6.2
@@ -140,34 +140,34 @@ offset_bottom = 77.2
 scale = Vector2(2, 2)
 script = ExtResource("2_2vwis")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Recipes"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Recipes" unique_id=1126910856]
 position = Vector2(69.2, 72.6)
 scale = Vector2(2.18118, 2.736)
 sprite_frames = SubResource("SpriteFrames_q6x15")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Recipes"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Recipes" unique_id=277318684]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 17.4
 offset_right = 86.0
 offset_bottom = 112.4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Recipes/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Recipes/ScrollContainer" unique_id=1710955845]
 custom_minimum_size = Vector2(80, 90)
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="Espresso" type="RichTextLabel" parent="Recipes/ScrollContainer/VBoxContainer"]
+[node name="Espresso" type="RichTextLabel" parent="Recipes/ScrollContainer/VBoxContainer" unique_id=251689454]
 custom_minimum_size = Vector2(50, 10)
 layout_mode = 2
 mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 7
+theme_override_font_sizes/normal_font_size = 8
 text = "Espresso
 Strong and bold — 2× coffee, no milk, no sugar, no cream."
 scroll_active = false
 
-[node name="Button" type="Button" parent="Recipes/ScrollContainer/VBoxContainer/Espresso"]
+[node name="Button" type="Button" parent="Recipes/ScrollContainer/VBoxContainer/Espresso" unique_id=1410180542]
 z_index = 1
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 0
@@ -177,18 +177,18 @@ offset_bottom = 31.0
 scale = Vector2(0.3, 0.3)
 text = "+"
 
-[node name="Latte" type="RichTextLabel" parent="Recipes/ScrollContainer/VBoxContainer"]
+[node name="Latte" type="RichTextLabel" parent="Recipes/ScrollContainer/VBoxContainer" unique_id=1054447732]
 custom_minimum_size = Vector2(50, 10)
 layout_mode = 2
 mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 7
+theme_override_font_sizes/normal_font_size = 8
 text = "Latte
 
 Smooth and creamy — 1× coffee, 2× milk, 1× sugar, no cream."
 scroll_active = false
 
-[node name="Button" type="Button" parent="Recipes/ScrollContainer/VBoxContainer/Latte"]
+[node name="Button" type="Button" parent="Recipes/ScrollContainer/VBoxContainer/Latte" unique_id=143742789]
 z_index = 1
 layout_mode = 0
 offset_left = 60.0
@@ -197,18 +197,18 @@ offset_bottom = 31.0
 scale = Vector2(0.3, 0.3)
 text = "+"
 
-[node name="Frappe" type="RichTextLabel" parent="Recipes/ScrollContainer/VBoxContainer"]
+[node name="Frappe" type="RichTextLabel" parent="Recipes/ScrollContainer/VBoxContainer" unique_id=2091508020]
 custom_minimum_size = Vector2(50, 10)
 layout_mode = 2
 mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 7
+theme_override_font_sizes/normal_font_size = 8
 text = "Frappe
 
 Chilled and sweet — 1× coffee, 1× milk, 2× sugar, 1× cream."
 scroll_active = false
 
-[node name="Button" type="Button" parent="Recipes/ScrollContainer/VBoxContainer/Frappe"]
+[node name="Button" type="Button" parent="Recipes/ScrollContainer/VBoxContainer/Frappe" unique_id=2119935927]
 z_index = 1
 layout_mode = 0
 offset_left = 60.0
@@ -217,18 +217,18 @@ offset_bottom = 31.0
 scale = Vector2(0.3, 0.3)
 text = "+"
 
-[node name="Hot Chocolate" type="RichTextLabel" parent="Recipes/ScrollContainer/VBoxContainer"]
+[node name="Hot Chocolate" type="RichTextLabel" parent="Recipes/ScrollContainer/VBoxContainer" unique_id=1652334627]
 custom_minimum_size = Vector2(50, 10)
 layout_mode = 2
 mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 7
+theme_override_font_sizes/normal_font_size = 8
 text = "Hot Chocolate
 
 Rich and cozy — 0× coffee, 2× milk, 2× sugar, 1× cream"
 scroll_active = false
 
-[node name="Button" type="Button" parent="Recipes/ScrollContainer/VBoxContainer/Hot Chocolate"]
+[node name="Button" type="Button" parent="Recipes/ScrollContainer/VBoxContainer/Hot Chocolate" unique_id=2111586125]
 z_index = 1
 layout_mode = 0
 offset_left = 60.0
@@ -237,7 +237,7 @@ offset_bottom = 31.0
 scale = Vector2(0.3, 0.3)
 text = "+"
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=881204394]
 layout_mode = 0
 offset_left = 85.8
 offset_top = 208.4

@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dusk3436m4akp"]
+[gd_scene format=3 uid="uid://dusk3436m4akp"]
 
-[ext_resource type="Script" path="res://scripts/customer_manager.gd" id="1_32lmb"]
+[ext_resource type="Script" uid="uid://dclq265n4hgc2" path="res://scripts/customer_manager.gd" id="1_32lmb"]
 
-[node name="CustomerManager" type="Node2D"]
+[node name="CustomerManager" type="Node2D" unique_id=564402141]
 script = ExtResource("1_32lmb")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1191509730]
 wait_time = 10.0
 autostart = true
 

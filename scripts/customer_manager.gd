@@ -9,7 +9,7 @@ func spawn_customer():
 	var spawn_pos = Vector2(randi_range(-200,350),randi_range(-150,100))# 2. Pick a random spawn location
 	new_customer.position = spawn_pos
 	new_customer.get_node("AnimatedSprite2D").play("customer"+str(randi_range(1,3)))
-	new_customer.order_preference = Global.items[(randi_range(0,Menu.items.size()-1))]
+	new_customer.order_preference = Global.items[(randi_range(0,Global.items.size()-1))]
 	Global.current_orders.append(new_customer.order_preference)
 	print(Global.current_orders)
 	new_customer.name = "Customer"+str(Global.customers)

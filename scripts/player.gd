@@ -14,6 +14,7 @@ var click_blocker
 var task_manager
 
 func _ready() -> void:
+
 	var cam = get_node("Camera2D")
 	cam.limit_bottom = 200
 	cam.limit_top = -370

@@ -2,10 +2,10 @@ extends Control
 @onready var nine_patch_rect: NinePatchRect = $NinePatchRect
 @onready var recipes: NinePatchRect = $Recipes
 
-var coffee : int
-var milk : int
-var cream : int
-var sugar : int
+var coffee : int = 0
+var milk : int = 0
+var cream : int = 0
+var sugar : int = 0
 
 var prepared_order
 
@@ -29,7 +29,7 @@ func _on_sugar_button_down() -> void:
 func _on_button_button_down() -> void:
 	visible = false
 	if prepared_order in Global.current_orders:
-		print("Order found")
+		#print("Order found")
 		Global.daily_revenue+=Global.menu["drinks"][prepared_order]["price"]
 		var satisfaction = 0
 		if sugar==Global.menu["drinks"][prepared_order]["sugar"]:
@@ -42,7 +42,10 @@ func _on_button_button_down() -> void:
 			satisfaction+=1
 		satisfaction*=25
 		Global.orders_served+=1
-		Global.avg_satisfaction = (Global.avg_satisfaction+satisfaction)/Global.orders_served
+		Global.tot_satisfaction += satisfaction
+		Global.avg_satisfaction = Global.tot_satisfaction/Global.orders_served
+		print(satisfaction)
+		print(Global.avg_satisfaction)
 		Global.update_revenue(Global.menu["drinks"][prepared_order]["price"])
 		for key in Global.customer_orders:
 			if Global.customer_orders[key] == prepared_order and get_tree().current_scene.find_child(key):
